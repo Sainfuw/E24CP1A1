@@ -25,8 +25,17 @@ $(document).on('turbolinks:load', function() {
       setColors();
     }
   });
+  $('.knob').bind('change', function(){
+    if (this.dataset.fgcolor == "red") {
+      red = parseInt($(this).val());
+    } else if (this.dataset.fgcolor == "green") {
+      green = parseInt($(this).val());
+    } else {
+      blue = parseInt($(this).val());
+    }
+    setColors();
+  });
 });
-
 
 // $(document).on('turbolinks:load', function () {
 //   $('#red').knob({
